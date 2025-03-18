@@ -48,7 +48,7 @@ def upload(filename):
 
 
 
-@lru_cache
+@lru_cache(maxsize=1000)
 def fib1(n):
     if n in (1,2):
         return 1
@@ -61,7 +61,7 @@ def fib1(n):
 
 if __name__ == '__main__':
     start_time = time.time()
-    print(fib1(350))
+    print(fib1(2))
     end_time = time.time()
     print(f'花费时间: {end_time - start_time:.2f}秒')
     # download('MySQL从删库到跑路.avi')
